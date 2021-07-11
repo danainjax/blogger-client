@@ -1,5 +1,6 @@
-body {
+body, textarea, input {
     font-family: IBM Plex Mono;
+    font-size: 16px;
 }
 
 h2 {
