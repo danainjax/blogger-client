@@ -13,8 +13,11 @@ class Post {
     }
    
     postHTML() {
-        let postString = `<h2> ${this.title} </h2>
-        <p> ${this.text} </p>`
+        let postString = `<h2><a href=""> ${this.title}</a> </h2>
+        <p> ${this.text} </p>
+        <button>Edit</button>
+        <button>Delete</button>
+        <br>`
         return postString
     }
 
