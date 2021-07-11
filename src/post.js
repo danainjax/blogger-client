@@ -24,6 +24,6 @@ class Post {
 
     //add event listener to the a tag on the title for each post
     //grab the dataset.id from it and then fetch that grab the post from Post.all and append to the dom
-    
+
 
 }
