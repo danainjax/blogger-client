@@ -18,3 +18,10 @@ button {
 
 }
 
+.filler {
+    height: 100px;
+    width: 100%;
+    background-color: lemonchiffon;
+    margin: 20px 0px 20px 0px;
+}
+
