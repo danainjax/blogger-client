@@ -7,4 +7,19 @@ class Post {
         Post.all.push(this);
 
     }
+
+    getPosts () {
+        postService.fetchAndLoadPosts()  
+    }
+   
+    postHTML() {
+        let postString = `<h2> ${this.title} </h2>
+        <p> ${this.text} </p>`
+        return postString
+    }
+
+    addPostToDom () {
+        posts.innerHTML += this.postHTML()
+    }
+
 }
