@@ -5,6 +5,10 @@ const textarea = document.getElementById("text")
 const baseURL = "http://localhost:3000"
 const postService = new PostService();
 const categoryService = new CategoryService();
+const form = document.querySelector("#posts-form")
 
 categoryService.fetchAndLoadCategories();
 postService.fetchAndLoadPosts();
+
+
+

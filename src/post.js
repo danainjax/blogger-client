@@ -18,12 +18,49 @@ class Post {
         return postString
     }
 
-    addPostToDom () {
+    addPostToDom (e) {
         posts.innerHTML += this.postHTML()
+        Post.clickOnPostTitle();
+        
     }
 
-    //add event listener to the a tag on the title for each post
-    //grab the dataset.id from it and then fetch that grab the post from Post.all and append to the dom
+    static clickOnPostTitle() {
+        const aTags = document.querySelectorAll('a');
+        for (const aTag of aTags) {
+            aTag.addEventListener('click', (e) => {
+                let id = e.target.dataset.id;
+                const currentPost = Post.grabPostById(id);
+                console.log(currentPost);
+                // clear the page or some of the divs , then append that post to the DOM 
+                //append to the dom
+               
+            })
+        } 
+    }
+
+    static grabPostById(id) {
+        return Post.all.find(post => post.id == (id)); 
+    }
+    
+    
+      
+      formHandler () {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const title = e.target.title.value;
+            const text = e.target.text.value;
+           return e
+           
+           // setTimeout(function() {form.reset()}, 2000); 
+            //call a PostService fetch post request with the data you grabbed.
+        })
+        postService.createPost(e)
+        
+        
+   }
+   
+
+    
 
 
 }
