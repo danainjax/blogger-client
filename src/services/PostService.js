@@ -3,7 +3,7 @@ class PostService {
         this.endpoint = `${baseURL}/posts`;
     }
 
-
+    
     fetchAndLoadPosts() {
         this.getPosts().then((posts) => {
             posts.forEach((post) => {
@@ -16,18 +16,7 @@ class PostService {
     getPosts () {
         return fetch(this.endpoint).then((res) => res.json());
     }
-    formHandler () {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault()
-            const title = e.target.title.value;
-            const text = e.target.text.value;
-           return e
-           
-           // setTimeout(function() {form.reset()}, 2000); 
-            //call a PostService fetch post request with the data you grabbed.
-        })
-        this.createPost(e)
-   }
+    
     createPost(e) {
         
         const postObj = {
