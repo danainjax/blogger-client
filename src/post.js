@@ -12,8 +12,8 @@ class Post {
     postHTML() {
         let postString = `<h2><a data-id=${this.id} href=""> ${this.title}</a> </h2>
         <p> ${this.text} </p>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button data-id=${this.id}>Edit</button>
+        <button data-id=${this.id}>Delete</button>
         <br>`
         return postString
     }
