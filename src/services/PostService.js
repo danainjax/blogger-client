@@ -50,8 +50,7 @@ class PostService {
             body: JSON.stringify(postObj)
         })
         .then(resp => resp.json())
-        .then(post => {
-            console.log('we got to the end')
+        .then(post => {postService.fetchAndLoadPosts()
         })
     }
 
