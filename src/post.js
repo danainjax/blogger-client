@@ -10,11 +10,11 @@ class Post {
     }
    
     postHTML() {
-        let postString = `<h2><a data-id=${this.id} href=""> ${this.title}</a> </h2>
+        let postString = `<div data-id=${this.id}><h2><a data-id=${this.id} href=""> ${this.title}</a> </h2>
         <p> ${this.text} </p>
         <button class="edit" data-id=${this.id}>Edit</button>
         <button class="delete" data-id=${this.id}>Delete</button>
-        <br>`
+        </div>`
         return postString
     }
 
