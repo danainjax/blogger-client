@@ -39,8 +39,8 @@ class PostService {
             category_id: 3
            
         }
-        console.log('are we hitting this?')
-        console.log(postObj)
+        // console.log('are we hitting this?')
+        // console.log(postObj)
         fetch(this.endpoint, {
             
             method: 'POST',
