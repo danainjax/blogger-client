@@ -12,8 +12,8 @@ class Post {
     postHTML() {
         let postString = `<h2><a data-id=${this.id} href=""> ${this.title}</a> </h2>
         <p> ${this.text} </p>
-        <button data-id=${this.id}>Edit</button>
-        <button data-id=${this.id}>Delete</button>
+        <button class="edit" data-id=${this.id}>Edit</button>
+        <button class="delete" data-id=${this.id}>Delete</button>
         <br>`
         return postString
     }
@@ -21,6 +21,8 @@ class Post {
     addPostToDom (e) {
         posts.innerHTML += this.postHTML()
         Post.clickOnPostTitle();
+        Post.deleteListener();
+        Post.editListener();
         
     }
 
@@ -44,7 +46,7 @@ class Post {
     
     
       
-      formHandler () {
+      formHandler() {
         form.addEventListener('submit', (e) => {
             e.preventDefault()
             const title = e.target.title.value;
@@ -54,15 +56,29 @@ class Post {
            // setTimeout(function() {form.reset()}, 2000); 
             //call a PostService fetch post request with the data you grabbed.
         })
-        postService.createPost(e)
-        
-        
-        
+        postService.createPost(e)  
         
    }
    
+   static deleteListener() {
+        const deleteButtons = document.getElementsByClassName('delete');
+        for (const deleteButton of deleteButtons) {
+            deleteButton.addEventListener('click', (e) => {
+                let id = e.target.dataset.id;
+                console.log(deleteButton, id)
+            })
 
-    
+            }
+   }
 
+static editListener() {
+    const editButtons = document.getElementsByClassName('edit');
+    for (const editButton of editButtons) {
+        editButton.addEventListener('click', (e) => {
+            let id = e.target.dataset.id;
+            console.log(editButton, id)
+        })
+    }
+}
 
 }
