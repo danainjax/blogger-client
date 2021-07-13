@@ -42,7 +42,9 @@ class PostService {
             body: JSON.stringify(postObj)
         })
         .then(resp => resp.json())
-        .then(post => {postService.fetchAndLoadPosts()
+        .then(post => {
+            let p = new Post(post)
+            p.addPostToDom();
         })
     }
 
