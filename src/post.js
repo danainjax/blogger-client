@@ -65,7 +65,9 @@ class Post {
         for (const deleteButton of deleteButtons) {
             deleteButton.addEventListener('click', (e) => {
                 let id = e.target.dataset.id;
-                console.log(deleteButton, id)
+                // console.log(deleteButton.parentElement)
+                deleteButton.parentElement.innerHTML= " "
+                //now send the delete request via fetch so it would be postService.deletePost(e)
             })
 
             }
