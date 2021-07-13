@@ -16,12 +16,26 @@ class PostService {
     getPosts () {
         return fetch(this.endpoint).then((res) => res.json());
     }
-    
-    createPost(e) {
+    formHandler () {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            // const title = e.target.title.value;
+            // const text = e.target.text.value;
+            this.createPost()
+            // return e
+           
+           setTimeout(function() {form.reset()}, 2000); 
+            //call a PostService fetch post request with the data you grabbed.
+        })
+       
+        
+        
+   }
+    createPost() {
         
         const postObj = {
-            title: e.target.title.value,
-            text: e.target.text.value,
+            title: document.getElementById('title').value,
+            text: document.getElementById('text').value,
             category_id: 3
            
         }

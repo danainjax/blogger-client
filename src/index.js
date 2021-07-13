@@ -9,6 +9,7 @@ const form = document.querySelector("#posts-form")
 
 categoryService.fetchAndLoadCategories();
 postService.fetchAndLoadPosts();
-
+postService.formHandler();
+postService.fetchAndLoadPosts();
 
 
