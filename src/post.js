@@ -59,19 +59,27 @@ class Post {
         postService.createPost(e)  
         
    }
+   static handleButton(e) {
+    console.log('we are hitting the handlebutton')
+    console.log(e.target)
+    // deleteButton.parentElement.innerHTML= " "
+    postService.deletePost(e);
+}
    
    static deleteListener() {
         const deleteButtons = document.getElementsByClassName('delete');
         for (const deleteButton of deleteButtons) {
-            deleteButton.addEventListener('click', (e) => {
-                let id = e.target.dataset.id;
+            deleteButton.addEventListener('click', this.handleButton) 
+                // let id = e.target.dataset.id;
                 // console.log(deleteButton.parentElement)
-                deleteButton.parentElement.innerHTML= " "
+                
+                // return e;
                 //now send the delete request via fetch so it would be postService.deletePost(e)
-            })
+            }
 
             }
-   }
+            
+   
 
 static editListener() {
     const editButtons = document.getElementsByClassName('edit');
@@ -82,5 +90,7 @@ static editListener() {
         })
     }
 }
+
+
 
 }
