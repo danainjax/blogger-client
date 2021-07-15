@@ -44,6 +44,7 @@ class PostService {
         .then(resp => resp.json())
         .then(post => {
             let p = new Post(post)
+            console.log(p)
             p.addPostToDom();
         })
     }
@@ -62,23 +63,43 @@ class PostService {
       
     }
 
-    // showIndividualPost() {
-        
-    //     posts.innerHTML = " "
-    //     console.log(e)
-    //     const id = e.target.dataset.id
-    //     console.log(id)
-    //     fetch(`http:/localhost:3000/posts/${id}`)
-    //     .then(resp => resp.json())
-    //     .then(post => {
-    //         let p = new Post(post)
-    //         p.addPostToDom();
-    //     })
-    //     // )
-    // }
-        
-       
+    showIndividualPost(e) {
+        const id = e.target.dataset.id
+        const currentPost = Post.grabPostById(id);
+        return fetch(`http://localhost:3000/posts/${id}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                
+            })
+        .then(resp => (resp.json())
+        .then(post => {
+            // let p = Post.all.find(post => post.id == (id))
+            // console.log(typeof(p), p.id)
+            let p = new Post(post)
+            console.log(p)
+            // p.addPostToDom();
+            p.addShowPostToDom();
+           
+           
+
+        })
+    )
     }
+
+    // takeShowPostAndAddItToTheDom(p){
+    //     let h1 = document.createElement('h1');
+    //     console.log(`${p.title}, checking the sitch`)
+        
+    //     h1.innerText = `${p.title}, and some extra text`
+    //     console.log(showPost)
+    //     addShowPostToDom()
+    //     // console.log(h1.innerText)
+    //     // showPost.innerHTML += (h1);
+    //     // console.log(showPost)
+    //     // console.log("we are hitting it")
+    // }
+}
 
     
       

@@ -26,17 +26,28 @@ class Post {
         
     }
 
+    addShowPostToDom (e) {
+        
+        showPost.innerHTML += this.postHTML()
+        console.log(showPost.innerHTML)
+        Post.clickOnPostTitle();
+        Post.deleteListener();
+        Post.editListener();
+    }
+
     static clickOnPostTitle() {
         const aTags = document.querySelectorAll('a');
         for (const aTag of aTags) {
             aTag.addEventListener('click', (e) => { 
+           
             
-            
-                let id = e.target.dataset.id;
-                const currentPost = Post.grabPostById(id);
-                console.log(currentPost);
-                console.log(e.target.dataset.id) 
-                
+                // let id = e.target.dataset.id;
+                // const currentPost = Post.grabPostById(id);
+                // console.log(currentPost);
+                // console.log(e.target.dataset.id) 
+               
+                postService.showIndividualPost(e)
+                e.preventDefault()
                 // clear the page or some of the divs , then append that post to the DOM 
                 //append to the dom
                

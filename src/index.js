@@ -1,6 +1,6 @@
 const posts = document.getElementById("posts-container")
 const newPost = document.getElementById("new-post")
-const categories = document.getElementById("categories-container")
+const showPost = document.getElementById("show-post")
 const textarea = document.getElementById("text")
 const baseURL = "http://localhost:3000"
 const postService = new PostService();
