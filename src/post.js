@@ -29,16 +29,22 @@ class Post {
     static clickOnPostTitle() {
         const aTags = document.querySelectorAll('a');
         for (const aTag of aTags) {
-            aTag.addEventListener('click', (e) => {
+            aTag.addEventListener('click', (e) => { 
+            
+            
                 let id = e.target.dataset.id;
                 const currentPost = Post.grabPostById(id);
                 console.log(currentPost);
+                console.log(e.target.dataset.id) 
+                
                 // clear the page or some of the divs , then append that post to the DOM 
                 //append to the dom
                
             })
         } 
+        
     }
+
 
     static grabPostById(id) {
         return Post.all.find(post => post.id == (id)); 

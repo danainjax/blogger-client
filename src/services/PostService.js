@@ -61,6 +61,21 @@ class PostService {
         console.log(`post${id} deleted from db, check and see!`)  
       
     }
+
+    // showIndividualPost() {
+        
+    //     posts.innerHTML = " "
+    //     console.log(e)
+    //     const id = e.target.dataset.id
+    //     console.log(id)
+    //     fetch(`http:/localhost:3000/posts/${id}`)
+    //     .then(resp => resp.json())
+    //     .then(post => {
+    //         let p = new Post(post)
+    //         p.addPostToDom();
+    //     })
+    //     // )
+    // }
         
        
     }
