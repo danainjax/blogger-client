@@ -26,7 +26,7 @@ class Post {
         
     }
 
-    addShowPostToDom (e) {
+    addShowPostToDom (event) {
         
         showPost.innerHTML += this.postHTML()
         console.log(showPost.innerHTML)
@@ -38,7 +38,7 @@ class Post {
     static clickOnPostTitle() {
         const aTags = document.querySelectorAll('a');
         for (const aTag of aTags) {
-            aTag.addEventListener('click', (e) => { 
+            aTag.addEventListener('click', postService.showIndividualPost) 
            
             
                 // let id = e.target.dataset.id;
@@ -46,15 +46,15 @@ class Post {
                 // console.log(currentPost);
                 // console.log(e.target.dataset.id) 
                
-                postService.showIndividualPost(e)
-                e.preventDefault()
+                // postService.showIndividualPost(e)
+                // e.preventDefault()
                 // clear the page or some of the divs , then append that post to the DOM 
                 //append to the dom
                
-            })
+            }
         } 
         
-    }
+    
 
 
     static grabPostById(id) {

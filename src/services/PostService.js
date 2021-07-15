@@ -63,9 +63,10 @@ class PostService {
       
     }
 
-    showIndividualPost(e) {
-        const id = e.target.dataset.id
-        const currentPost = Post.grabPostById(id);
+    showIndividualPost() {
+        event.preventDefault()
+        const id = event.target.dataset.id
+        // const currentPost = Post.grabPostById(id);
         return fetch(`http://localhost:3000/posts/${id}`, {
                 headers: {
                     'Content-Type': 'application/json',
