@@ -1,5 +1,5 @@
 body {
-    font-family: IBM Plex Mono;
+    font-family: Baloo Chettan;
     font-size: 16px;
     background-color: black;
     color: white;
@@ -20,7 +20,7 @@ button {
 }
 
 input {
-    font-family: IBM Plex Mono;
+    font-family: Baloo Chettan;
     font-size: 20px;
     width: 50%;
     height: 35px;
@@ -34,7 +34,7 @@ input {
 }
 
 textarea {
-    font-family: IBM Plex Mono;
+    font-family: Baloo Chettan;
     font-size: 20px;
     width: 75%;
     height: 200px;
