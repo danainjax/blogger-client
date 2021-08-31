@@ -60,6 +60,10 @@ class PostService {
         div.innerHTML = " "  
     }
 
+    editPost(){
+        console.log('edit post code')
+    }
+
     showIndividualPost() {
         event.preventDefault()
         const id = event.target.dataset.id

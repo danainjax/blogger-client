@@ -59,7 +59,10 @@ class Post {
         for (const editButton of editButtons) {
             editButton.addEventListener('click', (e) => {
                 let id = e.target.dataset.id;
+                //write code to assign the post to a variable here
                 console.log(editButton, id)
+                console.log(this)
+                postService.editPost(this)
             })
         }
     }
