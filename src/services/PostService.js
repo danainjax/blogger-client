@@ -4,9 +4,10 @@ class PostService {
     }
 
     fetchAndLoadPosts() {
-        this.getPosts().then((posts) => {
+        this.getPosts().then((posts) => {console.log(posts)
             posts.forEach((post) => {
                 let p = new Post(post);
+                console.log(p)
                 p.addPostToDom();
             })
         })

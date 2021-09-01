@@ -1,8 +1,10 @@
 class Post {
     static all = [];
     constructor (post) {
+        // debugger
         this.title = post.title;
         this.text = post.text;
+        this.image_url = post.image_url;
         this.id = post.id;
         this.category_id = post.category_id;
         Post.all.push(this);
@@ -10,7 +12,10 @@ class Post {
     }
    
     postHTML() {
-        let postString = `<div data-id=${this.id}><h2><a data-id=${this.id} href=""> ${this.title}</a> </h2>
+        console.log(this)
+        let postString = `<div data-id=${this.id}>
+        <img src="${this.image_url}" alt="placeholder" width="500" height="500">
+        <h2><a data-id=${this.id}> ${this.title}</a> </h2>
         <p> ${this.text} </p>
         <button class="edit" data-id=${this.id}>Edit</button>
         <button class="delete" data-id=${this.id}>Delete</button>
