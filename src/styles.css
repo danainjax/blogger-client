@@ -11,6 +11,9 @@ h1{
 h2 {
     background-color: gray;
     color: white;
+   
+    width: 50rem;
+    border-radius: 25%;
 }
 
 div {
