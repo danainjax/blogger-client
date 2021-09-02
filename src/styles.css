@@ -1,7 +1,7 @@
 body {
     font-family: Baloo Chettan;
     font-size: 24px;
-    background-color: black;
+    background-color: lightgray;
     color: white;
 }
 
@@ -76,3 +76,8 @@ textarea {
     height: 200px;
     width: 200px;
   }
+
+  input, textarea {
+      border-radius: 25%;
+  }
+
